@@ -137,4 +137,4 @@ function renderTable(dataMap, raidName) {
 }
 
 // By default render AQ40;
-loadJsonAndRender("aq40");
+loadJsonAndRender("naxx");
