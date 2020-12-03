@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- imports js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://wow.zamimg.com/widgets/power.js"></script>
+	<script type="text/javascript" src="scripts/index.js"></script>
+
+	<!-- imports css -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/index.css">
+
+	<base href="">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+
+	<title>KTLOS Loot Priority</title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/Letter-K-gold-icon.png"/>
+	<meta property="og:site_name" content="KTLOS Loot Prio"/>
+	<meta property="og:type" content="website"/>
+
+</head>
+<body>
+	
+	<div class="wrapper">
+		<div class="navigation">
+			<ul>
+				<li class="naxx-loot" onClick="loadNaxx()">Naxx</li>
+				<li class="aq40-loot" onClick="loadAQ40()">AQ40</li>
+				<li class="bwl-loot" onClick="loadBWL()">BWL</li>
+				<li class="mc-loot" onClick="loadMC()">MC</li>
+				<li class="world-loot" onClick="loadWorldBoss()">World Boss</li>
+			</ul>
+		</div>
+		<div class="loot-rules">
+			Loot priority only applies to the given raid, eg: <b>Snydicate(1) means that Snydicate only has loot priority for that item in raid 1.</b> <br>
+			If Snydicate(1) went to raid 2, that loot priority would be nullified. <br>
+			If no number is listed, assume the prio applies to the raid they attend regularly.
+		</div>
+		<div id="data-wrapper">
+		</div>
+	</div>
+		
+	</div>
+</body>
+
+</html>

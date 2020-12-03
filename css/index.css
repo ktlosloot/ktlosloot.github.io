@@ -1,0 +1,132 @@
+body {
+	background:#e7e7e7;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,.5) 8px, rgba(255,255,255,.5) 10px);
+	margin: 0px;
+}
+
+.wrapper {
+	font-family: 'Roboto', sans-serif;
+	color: black;
+	position:relative;
+	margin: 0 auto;
+	width: 95%;
+	background:#FFFFFF;
+	box-shadow: 0px 0px 15px #bdbdbd;	
+}
+
+.prio {
+	border: 1px solid #d4d4d4;
+	text-align: left;
+	padding: 8px;
+}
+
+.boss-header {
+	vertical-align: top;
+	font-size: 24px;
+	padding: 0 0 0 16px;
+	width: 10%;
+}
+
+.boss-table {
+	border-collapse: collapse;
+}
+
+.even {
+	background-color: #f4f4f4;
+}
+
+.item-header {
+	min-width: 280px;
+}
+
+.gp-header {
+	min-width: 50px;
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+	display: inline;
+}
+
+.loot-rules {
+	text-align: center;
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+	background: #FFFFFF;
+	background-color: #FFFFFF;
+	width: 100%;
+	font-size: 14px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+    border-bottom:1px solid #e7e7e7;
+	height: 10%;
+}
+
+#raid-header {
+	text-align: center;
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+	background: #FFFFFF;
+	background-color: #FFFFFF;
+	width: 100%;
+	font-size: 24px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+    border-bottom:1px solid #e7e7e7;
+	height: 10%;
+	margin-bottom: 20px;
+}
+
+.navigation{
+	text-align: center;
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+	background: #FFFFFF;
+	background-color: #FFFFFF;
+	width: 100%;
+	font-size: 16px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+    border-bottom:1px solid #e7e7e7;
+	height: 10%;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+}
+
+.navigation li {
+	font-size: 18px;
+	text-decoration: none;
+	color: black;
+    padding: 25px;
+    -webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+}
+
+.navigation li:hover {
+	font-size: 24px;
+	cursor: pointer;
+	color: #e5e5e5;
+    padding: 45px;
+    -webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+}
+
+i{
+	padding: 5px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+}
