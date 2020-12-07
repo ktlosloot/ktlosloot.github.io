@@ -156,7 +156,7 @@ function renderTable(dataMap, raidName) {
 				if (lastFilterValue === "") {
 					isRelevant = true;
 				}
-				isRelevant = isRelevant || (prio.trim().includes(lastFilterValue));
+				isRelevant = isRelevant || (prio.trim().toLowerCase().includes(lastFilterValue.trim().toLowerCase()));
 			}
 
 			if (!isRelevant) {
