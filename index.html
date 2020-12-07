@@ -32,10 +32,13 @@
 				<li class="world-loot" onClick="loadWorldBoss()">World Boss</li>
 			</ul>
 		</div>
-		<div class="loot-rules">
+		<div class="loot-rules header">
 			Loot priority only applies to the given raid, eg: <b>Snydicate(1) means that Snydicate only has loot priority for that item in raid 1.</b> <br>
 			If Snydicate(1) went to raid 2, that loot priority would be nullified. <br>
 			If no number is listed, assume the prio applies to the raid they attend regularly.
+		</div>
+		<div class="finder header">
+			Filter for: <input id="filter-input" onchange="filterBy()" onblur="filterBy()"></input>
 		</div>
 		<div id="data-wrapper">
 		</div>

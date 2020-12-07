@@ -9,13 +9,25 @@ const WOWHEAD_JS = "https://wow.zamimg.com/widgets/power.js";
 
 const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};
 
+var jsonCache = new Map();
+var lastFilterValue = "";
+var lastRaid = "naxx";
+
 function loadJsonAndRender(raidName) {
+	lastRaid = raidName;
+	if (jsonCache[raidName] != null) {
+		clearDataSection();
+		process(jsonCache[raidName], raidName);
+		return;
+	}
+
 	var xhr = new XMLHttpRequest();
 	xhr.responseType = 'json';
 	xhr.onreadystatechange = function(e) {
 		if (this.readyState == 4 && this.status == 200) {
 			clearDataSection();
 			process(this.response, raidName);
+			jsonCache[raidName] = this.response;
 		}
 	}
 	let jsonUrl = BASE_REQUEST_LINK + JSON_REQUEST_MAP[raidName];
@@ -64,6 +76,12 @@ function reloadWowheadScript() {
     $('<script>').attr('src', WOWHEAD_JS).appendTo('head');
 }
 
+function filterBy() {
+	let filterValue = document.getElementById("filter-input").value.trim();
+	lastFilterValue = filterValue;
+	loadJsonAndRender(lastRaid);
+}
+
 function renderTable(dataMap, raidName) {
 	const dataWrapper = document.querySelector("#data-wrapper");
 
@@ -92,6 +110,7 @@ function renderTable(dataMap, raidName) {
 		bossItems.appendChild(bossTable);
 
 		var isEven = true;
+		var isBossRelevant = false;
 		for (var item in dataMap[boss]) {
 			let itemTr = document.createElement("tr");
 			if (isEven) { 
@@ -125,16 +144,31 @@ function renderTable(dataMap, raidName) {
 
 			bossTable.appendChild(itemTr);
 			itemTr.appendChild(itemHeader);
+
+			var isRelevant = false;
 			for (var prioIndex in dataMap[boss][item][PRIO_KEY]) {
 				let prio = dataMap[boss][item][PRIO_KEY][prioIndex];
 				let prioTd = document.createElement("td");
 				prioTd.classList.add("prio");
 				prioTd.innerText = prio;
 				itemTr.appendChild(prioTd);
+
+				if (lastFilterValue === "") {
+					isRelevant = true;
+				}
+				isRelevant = isRelevant || (prio.trim().includes(lastFilterValue));
 			}
+
+			if (!isRelevant) {
+				itemTr.classList.add("hidden");
+			}
+			isBossRelevant = isBossRelevant || isRelevant;
+		}
+		if (!isBossRelevant) {
+			bossRow.classList.add("hidden");
 		}
 	}
 }
 
-// By default render AQ40;
-loadJsonAndRender("naxx");
+// By default render lastRaid;
+loadJsonAndRender(lastRaid);
