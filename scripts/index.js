@@ -145,7 +145,7 @@ function renderTable(dataMap, raidName) {
 			bossTable.appendChild(itemTr);
 			itemTr.appendChild(itemHeader);
 
-			var isRelevant = false;
+			var isNameRelevant = (lastFilterValue === "" || item.trim().toLowerCase().includes(lastFilterValue.trim().toLowerCase()));
 			for (var prioIndex in dataMap[boss][item][PRIO_KEY]) {
 				let prio = dataMap[boss][item][PRIO_KEY][prioIndex];
 				let prioTd = document.createElement("td");
@@ -154,15 +154,15 @@ function renderTable(dataMap, raidName) {
 				itemTr.appendChild(prioTd);
 
 				if (lastFilterValue === "") {
-					isRelevant = true;
+					isNameRelevant = true;
 				}
-				isRelevant = isRelevant || (prio.trim().toLowerCase().includes(lastFilterValue.trim().toLowerCase()));
+				isNameRelevant = isNameRelevant || (prio.trim().toLowerCase().includes(lastFilterValue.trim().toLowerCase()));
 			}
 
-			if (!isRelevant) {
+			if (!isNameRelevant) {
 				itemTr.classList.add("hidden");
 			}
-			isBossRelevant = isBossRelevant || isRelevant;
+			isBossRelevant = isBossRelevant || isNameRelevant;
 		}
 		if (!isBossRelevant) {
 			bossRow.classList.add("hidden");
