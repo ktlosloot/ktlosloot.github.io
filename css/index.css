@@ -134,3 +134,29 @@ i{
 	-o-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
 }
+
+.search-icon {
+	width: 24px;
+}
+
+.input-wrapper {
+	border: 1px solid #dfe1e5;
+	border-radius: 12px;
+	display: flex;
+	width: 480px;
+}
+
+.finder {
+	display: flex;
+    justify-content: center;
+}
+
+.search-path {
+	color: #9aa0a6;
+}
+
+input {
+	border: 0px;
+	outline: none;
+	width: 440px;
+}
