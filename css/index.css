@@ -120,7 +120,7 @@ li {
 	font-size: 24px;
 	cursor: pointer;
 	color: #e5e5e5;
-    padding: 45px;
+    padding: 35px;
     -webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -149,10 +149,6 @@ i{
 .finder {
 	display: flex;
     justify-content: center;
-}
-
-.search-path {
-	color: #9aa0a6;
 }
 
 input {
