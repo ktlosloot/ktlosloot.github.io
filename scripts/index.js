@@ -12,8 +12,10 @@ const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};
 var jsonCache = new Map();
 var lastFilterValue = "";
 var lastRaid = "naxx";
+var local = false;
 
 function loadJsonAndRender(raidName) {
+	if (!local && window.location.href != 'https://ktlosloot.github.io/') return;
 	lastRaid = raidName;
 	if (jsonCache[raidName] != null) {
 		clearDataSection();
